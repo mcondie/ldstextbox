@@ -1,4 +1,4 @@
-<div class="lds-textbox-container">
-	<label></label>
-	<input type="text" />
+<div class="lds-textbox-container" ng-class="{'show-label': ldsText.showLabel()}">
+	<label>{{ldsText.label}}</label>
+	<input type="text" ng-model="ldsText.model" placeholder="{{ldsText.placeholder}}" ng-focus="ldsText.focus()" ng-blur="ldsText.blur()"/>
 </div>
