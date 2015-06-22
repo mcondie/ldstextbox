@@ -1,8 +1,12 @@
 'use strict';
 /*jshint esnext: true */
 
-function PresentController(){
+function PresentController(person){
+	var present = this;
 
+	_.extend(present, {
+		person: person
+	});
 }
 
 angular.module('present')

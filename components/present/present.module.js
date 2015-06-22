@@ -9,7 +9,7 @@ function PresentConfig($urlRouterProvider, $stateProvider){
 		abstract: true,
 		template: '<ui-view></ui-view>',
 		resolve: {
-
+			//Put app data initialization code here
 		}
 	})
 	.state('present.home', {
@@ -18,8 +18,14 @@ function PresentConfig($urlRouterProvider, $stateProvider){
 		controller: 'PresentController',
 		controllerAs: 'present',
 		resolve: {
-
+			person: GetPerson
 		}
+	});
+}
+
+function GetPerson($http){
+	return $http.get('./data.json').then(function(response){
+		return response.data;
 	});
 }
 
@@ -27,4 +33,4 @@ angular.module('present', [
 	'ui.router',
 	'ldstextbox'
 	])
-	.config(PresentConfig);
+.config(PresentConfig);
