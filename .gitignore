@@ -1,0 +1,12 @@
+bower_components
+node_modules
+.idea
+.tmp
+roster
+dist
+app.css
+npm-debug.log
+*.sublime-workspace
+*.sublime-project
+/.project
+
